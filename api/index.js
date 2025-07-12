@@ -1,5 +1,5 @@
 export default function handler(req, res) {
-  const VERIFY_TOKEN = "d8dde2PfKtszF1RnryDZMcLDU4mkf7Q2FEW7uF9ry6X5dZMRXLzNy9Eq3AGNpwj7iJUqAunx6P5sfXbrvU7Pgmvjd..."; // seu token
+  const VERIFY_TOKEN = "d8dde2PfKtszF1RnryDZMcLDU4mkft7Q2FEW7uF9ry6X5dZMRXLzNy9Eq3AGNpwj7iJUqAunx6P5sfXbrvU7Pgmvjdbu3RX7nf9"; // seu token
 
   if (req.method === "GET") {
     const mode = req.query["hub.mode"];
