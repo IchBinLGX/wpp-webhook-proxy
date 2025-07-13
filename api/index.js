@@ -9,10 +9,9 @@ export default function handler(req, res) {
     if (mode && token === VERIFY_TOKEN) {
       res.status(200).send(challenge);
     } else {
-      res.sendStatus(403);
+      res.status(403).send();
     }
   } else if (req.method === "POST") {
-    // Repassar evento ao Make
     fetch("https://hook.us2.make.com/3uxhngvjt6aeeximqoxxapee9nqvhcku", {
       method: "POST",
       headers: {
@@ -20,9 +19,9 @@ export default function handler(req, res) {
       },
       body: JSON.stringify(req.body),
     })
-    .then(() => res.sendStatus(200))
-    .catch(() => res.sendStatus(500));
+      .then(() => res.status(200).send())
+      .catch(() => res.status(500).send());
   } else {
-    res.sendStatus(405);
+    res.status(405).send();
   }
 }
